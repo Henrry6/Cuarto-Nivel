@@ -43,14 +43,17 @@ const Form = (props) => {
     
   return (
     <form method="get" onSubmit={save}>
-      <input 
-        type="text" 
-        value={userName}
-        onChange={handleChange}
-        placeholder="GitHub username" 
-        required 
-      />
-      <input type="submit" value="Save" />
+      <div className="ipt">
+        <input 
+          className="input"
+          type="text" 
+          value={userName}
+          onChange={handleChange}
+          placeholder="Nombre del usuario" 
+          required 
+        />
+        <button className="but" type="submit" value="Obtener">Obtener</button>
+      </div>
     </form>
   );
 }
@@ -65,12 +68,12 @@ function App (props) {
 
   return (
     <div>
-      <div>{props.title}</div>
+      <div className="title">{props.title}</div>
       <Form onSubmit={addChoreLog}/>
       <CardList profiles={profiles} />
-      {/* <CardList profiles={testData} /> */}
+      <CardList profiles={testData} />
     </div>
   )
 }
 
-ReactDOM.render(<App title="Proyecto"/>, document.getElementById('root'));
+ReactDOM.render(<App title="Usuarios de Github"/>, document.getElementById('root'));
