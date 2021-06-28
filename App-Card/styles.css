@@ -1,0 +1,16 @@
+.info {
+  background-color: rgb(193, 95, 95);
+}
+
+.tam {
+  height: auto;
+  width: auto;
+  display: inline-block;
+  margin: 20px;
+}
+.tam2 {
+  height: 150px;
+  width: auto;
+  display: inline-block;
+  opacity: 20%;
+}
