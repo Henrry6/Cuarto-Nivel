@@ -57,15 +57,15 @@ const Form = (props) => {
 function App (props) {
   const [profiles, setState] = useState(testData);
 
-  const addChoreLog = (log) => {
-    let logs = [...profiles, log];
+  const addNewProfile = (prof) => {
+    let logs = [...profiles, prof];
     setState(logs);
   }
 
   return (
     <div>
       <div className="title">{props.title}</div>
-      <Form onSubmit={addChoreLog}/>
+      <Form onSubmit={addNewProfile}/>
       <CardList profiles={profiles} />
     </div>
   )
