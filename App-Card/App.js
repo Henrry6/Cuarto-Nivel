@@ -30,25 +30,21 @@ function Card(props) {
 const Form = (props) => {
   const [userName, setState] = useState('')
 
-  let handleChange = (e) => {
-    let name = e.target.value
-    setState(name)
-  } 
-
-  let save = async (e) => {
+  let handleChange = async (e) => {
     e.preventDefault();
     const resp = await axios.get(`https://api.github.com/users/${userName}`);
     props.onSubmit(resp.data)
-  }
-    
+    setState('')
+  } 
+
   return (
-    <form method="get" onSubmit={save}>
+    <form method="get" onSubmit={handleChange}>
       <div className="ipt">
         <input 
           className="input"
           type="text" 
           value={userName}
-          onChange={handleChange}
+          onChange={e => setState(e.target.value)}
           placeholder="Nombre del usuario" 
           required 
         />
@@ -59,7 +55,7 @@ const Form = (props) => {
 }
 
 function App (props) {
-  const [profiles, setState] = useState([]);
+  const [profiles, setState] = useState(testData);
 
   const addChoreLog = (log) => {
     let logs = [...profiles, log];
@@ -71,7 +67,6 @@ function App (props) {
       <div className="title">{props.title}</div>
       <Form onSubmit={addChoreLog}/>
       <CardList profiles={profiles} />
-      <CardList profiles={testData} />
     </div>
   )
 }
