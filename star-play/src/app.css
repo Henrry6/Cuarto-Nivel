@@ -1,3 +1,6 @@
+ * {
+   background-color: #666;
+ }
 .game {
   max-width: 500px;
   margin: 0 auto;
@@ -8,7 +11,8 @@
 }
 
 .help {
-  color: #666;
+  color: #eee;
+  font-size: 20px;
   margin: 10px;
   text-align: center;
 }
@@ -51,13 +55,49 @@
 }
 
 .timer {
-	color: #666;
+  font-weight: bold;
+	color: #eee;
   margin-top: 3px;
   margin-left: 3px;
+  font-size: 20px;
+
 }
 
 .game-done .message {
   font-size: 250%;
   font-weight: bold;
   margin: 15px;
+}
+
+.login {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.input{
+  width: 300px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: #ddd;
+}
+
+.but{
+  background-color: #ddd;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.box {
+  background-color: #ddd;
+  /* background-image: linear-gradient(#49ddab, #bfa4f5); */
+  width: 230px;
+  padding: 10px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.list {
+  background-color: #ddd;
+
 }

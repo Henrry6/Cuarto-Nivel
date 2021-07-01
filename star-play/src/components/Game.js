@@ -17,7 +17,7 @@ export const Game = props => {
   const candidatesAreWrong = utils.sum(candidateNums) > stars;
   const gameStatus = availableNums.length === 0 
   	? 'won'
-    : secondsLeft === 0 ? 'lost' : 'active'
+    : secondsLeft === 0 ? props.setEstaLogueado(false) : 'active'
 
   const numberStatus = number => {
     if (!availableNums.includes(number)) {
@@ -46,11 +46,8 @@ export const Game = props => {
 
   return (
     <div className="game">
-      <div>
-        <input placheholder="Ingrese un nombre"/>
-      </div>
       <div className="help">
-        Pick 1 or more numbers that sum to the number of stars
+        Elija 1 o más números que sumen la cantidad de estrellas
       </div>
       <div className="body">
         <div className="left">
@@ -71,7 +68,7 @@ export const Game = props => {
           ))}
         </div>
       </div>
-      <div className="timer">Time Remaining: {secondsLeft}</div>
+      <div className="timer">Tiempo restante: {secondsLeft}</div>
     </div>
   );
 };
