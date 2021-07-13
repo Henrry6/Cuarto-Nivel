@@ -4,3 +4,6 @@
 [submodule "App-movil"]
 	path = App-movil
 	url = https://github.com/Henrry6/App-movil
+[submodule "PlayWithReact"]
+	path = PlayWithReact
+	url = https://github.com/Henrry6/PlayWithReact
